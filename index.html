@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio Website</title>
+    <!-- Add any CSS or external libraries here -->
+</head>
+<body>
+    <header>
+        <h1>Welcome to Your Portfolio</h1>
+    </header>
+    <main>
+        <section>
+            <h2>Profile Information</h2>
+            <form>
+                <label for="profile-photo">Upload Profile Photo:</label>
+                <input type="file" id="profile-photo" accept="image/*" name="profile-photo">
+                
+                <label for="fullname">Full Name:</label>
+                <input type="text" id="fullname" name="fullname" required>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="phone">Phone:</label>
+                <input type="tel" id="phone" name="phone">
+            </form>
+        </section>
+
+        <section>
+            <h2>Education</h2>
+            <form>
+                <label for="university">University:</label>
+                <input type="text" id="university" name="university">
+
+                <label for="degree">Degree:</label>
+                <input type="text" id="degree" name="degree">
+
+                <label for="grad-year">Graduation Year:</label>
+                <input type="number" id="grad-year" name="grad-year">
+            </form>
+        </section>
+
+        <section>
+            <h2>Certificates</h2>
+            <form>
+                <label for="certificate">Upload Certificate:</label>
+                <input type="file" id="certificate" accept=".pdf,.doc,.docx" name="certificate">
+            </form>
+        </section>
+
+        <section>
+            <h2>Work Experience</h2>
+            <form>
+                <label for="job-title">Job Title:</label>
+                <input type="text" id="job-title" name="job-title">
+
+                <label for="company">Company:</label>
+                <input type="text" id="company" name="company">
+
+                <label for="start-date">Start Date:</label>
+                <input type="date" id="start-date" name="start-date">
+
+                <label for="end-date">End Date:</label>
+                <input type="date" id="end-date" name="end-date">
+
+                <label for="description">Description:</label>
+                <textarea id="description" name="description" rows="4"></textarea>
+            </form>
+        </section>
+
+        <section>
+            <h2>Skills</h2>
+            <form>
+                <div>
+                    <label for="skill1">Skill 1:</label>
+                    <input type="text" id="skill1" name="skill1">
+
+                    <label for="proficiency1">Proficiency:</label>
+                    <select id="proficiency1" name="proficiency1">
+                        <option value="Beginner">Beginner</option>
+                        <option value="Intermediate">Intermediate</option>
+                        <option value="Advanced">Advanced</option>
+                        <option value="Expert">Expert</option>
+                    </select>
+                </div>
+
+                <div>
+                    <label for="skill2">Skill 2:</label>
+                    <input type="text" id="skill2" name="skill2">
+
+                    <label for="proficiency2">Proficiency:</label>
+                    <select id="proficiency2" name="proficiency2">
+                        <option value="Beginner">Beginner</option>
+                        <option value="Intermediate">Intermediate</option>
+                        <option value="Advanced">Advanced</option>
+                        <option value="Expert">Expert</option>
+                    </select>
+                </div>
+                <!-- Add more skill inputs as needed -->
+
+            </form>
+        </section>
+
+        <section>
+            <h2>Introduction</h2>
+            <form>
+                <label for="introduction">Introduce Yourself:</label>
+                <textarea id="introduction" name="introduction" rows="4"></textarea>
+            </form>
+        </section>
+
+        <section>
+            <form id="portfolio-form">
+                <button type="submit">Submit</button>
+            </form>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 Your Name</p>
+    </footer>
+
+    <script>
+        document.getElementById('portfolio-form').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent default form submission
+
+            // You can access form data and further process it here
+            let formData = new FormData(this);
+
+            // For demonstration, log form data to the console
+            for (let pair of formData.entries()) {
+                console.log(pair[0] + ': ' + pair[1]);
+            }
+
+            // You can perform additional actions here, like sending the data to a server
+            // using AJAX, or storing it in local storage, etc.
+        });
+    </script>
+</body>
+</html>
